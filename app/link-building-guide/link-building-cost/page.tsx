@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
-import { Nav } from "@/components/nav";
-import { Footer } from "@/components/footer";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -64,25 +54,23 @@ export default function LinkBuildingCostPage() {
             $5,000-$20,000 monthly for sustainable SEO growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
-              <Link href="/#pricing">View Backlinky Pricing</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href="/free-tools/link-building-roi-calculator/">
-                Calculate Your ROI
-              </Link>
-            </Button>
+            <Link href="/#pricing" className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg bg-primary text-primary-foreground hover:bg-primary/90">
+              View Backlinky Pricing
+            </Link>
+            <Link href="/free-tools/link-building-roi-calculator/" className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg border border-input bg-background hover:bg-accent hover:text-accent-foreground">
+              Calculate Your ROI
+            </Link>
           </div>
         </div>
       </section>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         {/* Table of Contents */}
-        <Card className="mb-12">
-          <CardHeader>
-            <CardTitle className="text-xl">Table of Contents</CardTitle>
-          </CardHeader>
-          <CardContent>
+        <div className="mb-12 rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div className="flex flex-col space-y-1.5 p-6">
+            <h3 className="text-xl font-semibold leading-none tracking-tight">Table of Contents</h3>
+          </div>
+          <div className="p-6 pt-0">
             <nav className="grid gap-2 sm:grid-cols-2">
               {[
                 { href: "#cost-2025", text: "How Much Does Link Building Cost in 2025?" },
@@ -104,8 +92,8 @@ export default function LinkBuildingCostPage() {
                 </a>
               ))}
             </nav>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Introduction */}
         <div className="prose prose-lg max-w-none mb-16">
@@ -180,78 +168,80 @@ export default function LinkBuildingCostPage() {
             <strong>backlink cost</strong> by link type:
           </p>
 
-          <Card className="mb-8 overflow-hidden">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Link Type</TableHead>
-                  <TableHead>Price Range</TableHead>
-                  <TableHead>Quality Level</TableHead>
-                  <TableHead>Best For</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="font-medium">Guest Posts</TableCell>
-                  <TableCell>$100 - $500</TableCell>
-                  <TableCell>High</TableCell>
-                  <TableCell>Brand awareness, authority</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Niche Edits</TableCell>
-                  <TableCell>$50 - $200</TableCell>
-                  <TableCell>Medium-High</TableCell>
-                  <TableCell>Quick wins, existing content</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">
+          <div className="mb-8 overflow-hidden rounded-lg border bg-card text-card-foreground shadow-sm">
+            <div className="w-full overflow-auto">
+              <table className="w-full caption-bottom text-sm">
+                <thead className="[&_tr]:border-b">
+                  <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <th className="text-left py-3 text-[#55556A] font-normal">Link Type</th>
+                  <th className="text-left py-3 text-[#55556A] font-normal">Price Range</th>
+                  <th className="text-left py-3 text-[#55556A] font-normal">Quality Level</th>
+                  <th className="text-left py-3 text-[#55556A] font-normal">Best For</th>
+                </tr>
+                </thead>
+                <tbody className="[&_tr:last-child]:border-0">
+                <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <td className="p-4 align-middle font-medium">Guest Posts</td>
+                  <td className="p-4 align-middle">$100 - $500</td>
+                  <td className="p-4 align-middle">High</td>
+                  <td className="p-4 align-middle">Brand awareness, authority</td>
+                </tr>
+                <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <td className="p-4 align-middle font-medium">Niche Edits</td>
+                  <td className="p-4 align-middle">$50 - $200</td>
+                  <td className="p-4 align-middle">Medium-High</td>
+                  <td className="p-4 align-middle">Quick wins, existing content</td>
+                </tr>
+                <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <td className="p-4 align-middle font-medium">
                     Link Insertions
-                  </TableCell>
-                  <TableCell>$75 - $300</TableCell>
-                  <TableCell>Medium</TableCell>
-                  <TableCell>Contextual relevance</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Digital PR</TableCell>
-                  <TableCell>$500 - $5,000+</TableCell>
-                  <TableCell>Premium</TableCell>
-                  <TableCell>High DA sites, brand mentions</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">
+                  </td>
+                  <td className="p-4 align-middle">$75 - $300</td>
+                  <td className="p-4 align-middle">Medium</td>
+                  <td className="p-4 align-middle">Contextual relevance</td>
+                </tr>
+                <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <td className="p-4 align-middle font-medium">Digital PR</td>
+                  <td className="p-4 align-middle">$500 - $5,000+</td>
+                  <td className="p-4 align-middle">Premium</td>
+                  <td className="p-4 align-middle">High DA sites, brand mentions</td>
+                </tr>
+                <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <td className="p-4 align-middle font-medium">
                     Resource Page Links
-                  </TableCell>
-                  <TableCell>$50 - $150</TableCell>
-                  <TableCell>Medium</TableCell>
-                  <TableCell>Educational content</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">
+                  </td>
+                  <td className="p-4 align-middle">$50 - $150</td>
+                  <td className="p-4 align-middle">Medium</td>
+                  <td className="p-4 align-middle">Educational content</td>
+                </tr>
+                <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <td className="p-4 align-middle font-medium">
                     Broken Link Building
-                  </TableCell>
-                  <TableCell>$100 - $400</TableCell>
-                  <TableCell>High</TableCell>
-                  <TableCell>Value exchange approach</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">
+                  </td>
+                  <td className="p-4 align-middle">$100 - $400</td>
+                  <td className="p-4 align-middle">High</td>
+                  <td className="p-4 align-middle">Value exchange approach</td>
+                </tr>
+                <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <td className="p-4 align-middle font-medium">
                     Skyscraper Technique
-                  </TableCell>
-                  <TableCell>$200 - $800</TableCell>
-                  <TableCell>High</TableCell>
-                  <TableCell>Competitive niches</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">
+                  </td>
+                  <td className="p-4 align-middle">$200 - $800</td>
+                  <td className="p-4 align-middle">High</td>
+                  <td className="p-4 align-middle">Competitive niches</td>
+                </tr>
+                <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <td className="p-4 align-middle font-medium">
                     HARO / Expert Quotes
-                  </TableCell>
-                  <TableCell>Free - $200</TableCell>
-                  <TableCell>High</TableCell>
-                  <TableCell>Thought leadership</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </Card>
+                  </td>
+                  <td className="p-4 align-middle">Free - $200</td>
+                  <td className="p-4 align-middle">High</td>
+                  <td className="p-4 align-middle">Thought leadership</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
           <h3 className="text-xl font-semibold mb-4">Understanding Each Link Type</h3>
           <div className="space-y-6">
@@ -300,44 +290,46 @@ export default function LinkBuildingCostPage() {
             right approach for your budget and goals:
           </p>
 
-          <Card className="mb-8 overflow-hidden">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Pricing Model</TableHead>
-                  <TableHead>Cost Range</TableHead>
-                  <TableHead>Pros</TableHead>
-                  <TableHead>Cons</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="font-medium">Per Link</TableCell>
-                  <TableCell>$100 - $1,000/link</TableCell>
-                  <TableCell>Pay for results only</TableCell>
-                  <TableCell>Less strategic</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Monthly Retainer</TableCell>
-                  <TableCell>$3,000 - $20,000/mo</TableCell>
-                  <TableCell>Consistent growth</TableCell>
-                  <TableCell>Monthly commitment</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Performance-Based</TableCell>
-                  <TableCell>Variable</TableCell>
-                  <TableCell>Risk sharing</TableCell>
-                  <TableCell>Higher per-link cost</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Project-Based</TableCell>
-                  <TableCell>$5,000 - $50,000</TableCell>
-                  <TableCell>Defined scope</TableCell>
-                  <TableCell>Limited ongoing support</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </Card>
+          <div className="mb-8 overflow-hidden rounded-lg border bg-card text-card-foreground shadow-sm">
+            <div className="w-full overflow-auto">
+              <table className="w-full caption-bottom text-sm">
+                <thead className="[&_tr]:border-b">
+                  <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Pricing Model</th>
+                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Cost Range</th>
+                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Pros</th>
+                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Cons</th>
+                  </tr>
+                </thead>
+                <tbody className="[&_tr:last-child]:border-0">
+                <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <td className="p-4 align-middle font-medium">Per Link</td>
+                  <td className="p-4 align-middle">$100 - $1,000/link</td>
+                  <td className="p-4 align-middle">Pay for results only</td>
+                  <td className="p-4 align-middle">Less strategic</td>
+                </tr>
+                <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <td className="p-4 align-middle font-medium">Monthly Retainer</td>
+                  <td className="p-4 align-middle">$3,000 - $20,000/mo</td>
+                  <td className="p-4 align-middle">Consistent growth</td>
+                  <td className="p-4 align-middle">Monthly commitment</td>
+                </tr>
+                <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <td className="p-4 align-middle font-medium">Performance-Based</td>
+                  <td className="p-4 align-middle">Variable</td>
+                  <td className="p-4 align-middle">Risk sharing</td>
+                  <td className="p-4 align-middle">Higher per-link cost</td>
+                </tr>
+                <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <td className="p-4 align-middle font-medium">Project-Based</td>
+                  <td className="p-4 align-middle">$5,000 - $50,000</td>
+                  <td className="p-4 align-middle">Defined scope</td>
+                  <td className="p-4 align-middle">Limited ongoing support</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
           <h3 className="text-xl font-semibold mb-4">Which Model is Right for You?</h3>
           <ul className="space-y-3 mb-6">
@@ -374,9 +366,9 @@ export default function LinkBuildingCostPage() {
               then provide custom pricing based on your industry competitiveness
               and target keywords.
             </p>
-            <Button asChild>
-              <Link href="/#pricing">View Our Pricing Plans</Link>
-            </Button>
+            <Link href="/#pricing" className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg bg-primary text-primary-foreground hover:bg-primary/90">
+              View Our Pricing Plans
+            </Link>
           </div>
         </section>
 
@@ -396,54 +388,54 @@ export default function LinkBuildingCostPage() {
             The Hidden Costs of Cheap Link Building
           </h3>
           <div className="grid gap-4 md:grid-cols-2 mb-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Google Penalties</CardTitle>
-              </CardHeader>
-              <CardContent>
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+              <div className="flex flex-col space-y-1.5 p-6">
+                <h4 className="text-lg font-semibold leading-none tracking-tight">Google Penalties</h4>
+              </div>
+              <div className="p-6 pt-0">
                 <p className="text-muted-foreground">
                   Manual actions or algorithmic penalties can drop your rankings
                   overnight. Recovery often costs $5,000-$15,000 in disavow
                   work, content updates, and reputation repair.
                 </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Lost Traffic Revenue</CardTitle>
-              </CardHeader>
-              <CardContent>
+              </div>
+            </div>
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+              <div className="flex flex-col space-y-1.5 p-6">
+                <h4 className="text-lg font-semibold leading-none tracking-tight">Lost Traffic Revenue</h4>
+              </div>
+              <div className="p-6 pt-0">
                 <p className="text-muted-foreground">
                   A penalty can reduce organic traffic by 50-90%. For a site
                   earning $10,000/month from organic traffic, that&apos;s
                   $5,000-$9,000 in lost revenue monthly until recovery.
                 </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Time Investment</CardTitle>
-              </CardHeader>
-              <CardContent>
+              </div>
+            </div>
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+              <div className="flex flex-col space-y-1.5 p-6">
+                <h4 className="text-lg font-semibold leading-none tracking-tight">Time Investment</h4>
+              </div>
+              <div className="p-6 pt-0">
                 <p className="text-muted-foreground">
                   Hours spent acquiring low-quality links are hours wasted.
                   That time could be invested in quality content or legitimate
                   outreach with actual ROI.
                 </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Brand Reputation</CardTitle>
-              </CardHeader>
-              <CardContent>
+              </div>
+            </div>
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+              <div className="flex flex-col space-y-1.5 p-6">
+                <h4 className="text-lg font-semibold leading-none tracking-tight">Brand Reputation</h4>
+              </div>
+              <div className="p-6 pt-0">
                 <p className="text-muted-foreground">
                   Links from spammy sites associate your brand with low-quality
                   content. This damages credibility with both search engines and
                   potential customers.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
 
           <div className="bg-red-50 border border-red-200 p-6 rounded-lg">
@@ -473,14 +465,14 @@ export default function LinkBuildingCostPage() {
           </p>
 
           <h3 className="text-xl font-semibold mb-4">The Link Building ROI Formula</h3>
-          <Card className="mb-8 p-6">
+          <div className="mb-8 rounded-lg border bg-card text-card-foreground shadow-sm p-6">
             <div className="text-center">
               <p className="text-lg font-mono bg-muted p-4 rounded">
                 ROI = (Value of Increased Traffic - Link Building Cost) / Link
                 Building Cost × 100
               </p>
             </div>
-          </Card>
+          </div>
 
           <h3 className="text-xl font-semibold mb-4">Key Metrics to Track</h3>
           <ul className="space-y-3 mb-8">
@@ -505,7 +497,7 @@ export default function LinkBuildingCostPage() {
           </ul>
 
           <h3 className="text-xl font-semibold mb-4">Example ROI Calculation</h3>
-          <Card className="mb-8 p-6">
+          <div className="mb-8 rounded-lg border bg-card text-card-foreground shadow-sm p-6">
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -532,7 +524,7 @@ export default function LinkBuildingCostPage() {
                 </p>
               </div>
             </div>
-          </Card>
+          </div>
 
           <div className="bg-primary/5 border border-primary/20 p-6 rounded-lg">
             <h4 className="font-semibold mb-2">
@@ -543,11 +535,9 @@ export default function LinkBuildingCostPage() {
               Simply input your current traffic, conversion rates, and target
               investment to see projected returns.
             </p>
-            <Button variant="outline" asChild>
-              <Link href="/free-tools/link-building-roi-calculator/">
-                Try the ROI Calculator
-              </Link>
-            </Button>
+            <Link href="/free-tools/link-building-roi-calculator/" className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg border border-input bg-background hover:bg-accent hover:text-accent-foreground">
+              Try the ROI Calculator
+            </Link>
           </div>
         </section>
 
@@ -636,42 +626,44 @@ export default function LinkBuildingCostPage() {
             comparison:
           </p>
 
-          <Card className="mb-8 overflow-hidden">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Approach</TableHead>
-                  <TableHead>Cost Range</TableHead>
-                  <TableHead>Time Required</TableHead>
-                  <TableHead>Quality Control</TableHead>
-                  <TableHead>Best For</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="font-medium">DIY</TableCell>
-                  <TableCell>$500 - $2,000/mo</TableCell>
-                  <TableCell>20-40 hrs/week</TableCell>
-                  <TableCell>Variable</TableCell>
-                  <TableCell>Small budgets, expertise</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Freelancer</TableCell>
-                  <TableCell>$1,500 - $5,000/mo</TableCell>
-                  <TableCell>5-10 hrs/week</TableCell>
-                  <TableCell>Moderate</TableCell>
-                  <TableCell>Specific campaigns</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Agency</TableCell>
-                  <TableCell>$3,000 - $20,000/mo</TableCell>
-                  <TableCell>2-5 hrs/week</TableCell>
-                  <TableCell>High</TableCell>
-                  <TableCell>Scalable growth</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </Card>
+          <div className="mb-8 overflow-hidden rounded-lg border bg-card text-card-foreground shadow-sm">
+            <div className="w-full overflow-auto">
+              <table className="w-full caption-bottom text-sm">
+                <thead className="[&_tr]:border-b">
+                  <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Approach</th>
+                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Cost Range</th>
+                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Time Required</th>
+                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Quality Control</th>
+                    <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Best For</th>
+                  </tr>
+                </thead>
+                <tbody className="[&_tr:last-child]:border-0">
+                <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <td className="p-4 align-middle font-medium">DIY</td>
+                  <td className="p-4 align-middle">$500 - $2,000/mo</td>
+                  <td className="p-4 align-middle">20-40 hrs/week</td>
+                  <td className="p-4 align-middle">Variable</td>
+                  <td className="p-4 align-middle">Small budgets, expertise</td>
+                </tr>
+                <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <td className="p-4 align-middle font-medium">Freelancer</td>
+                  <td className="p-4 align-middle">$1,500 - $5,000/mo</td>
+                  <td className="p-4 align-middle">5-10 hrs/week</td>
+                  <td className="p-4 align-middle">Moderate</td>
+                  <td className="p-4 align-middle">Specific campaigns</td>
+                </tr>
+                <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                  <td className="p-4 align-middle font-medium">Agency</td>
+                  <td className="p-4 align-middle">$3,000 - $20,000/mo</td>
+                  <td className="p-4 align-middle">2-5 hrs/week</td>
+                  <td className="p-4 align-middle">High</td>
+                  <td className="p-4 align-middle">Scalable growth</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
           <h3 className="text-xl font-semibold mb-4">DIY Link Building</h3>
           <p className="mb-4 leading-relaxed">
@@ -710,11 +702,9 @@ export default function LinkBuildingCostPage() {
               ranked the best link building agencies to help you make an
               informed decision.
             </p>
-            <Button variant="outline" asChild>
-              <Link href="/best-link-building-agencies/">
-                See Agency Rankings
-              </Link>
-            </Button>
+            <Link href="/best-link-building-agencies/" className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg border border-input bg-background hover:bg-accent hover:text-accent-foreground">
+              See Agency Rankings
+            </Link>
           </div>
         </section>
 
@@ -769,7 +759,7 @@ export default function LinkBuildingCostPage() {
           </p>
 
           <h3 className="text-xl font-semibold mb-4">Sample Budget Breakdown</h3>
-          <Card className="mb-8 p-6">
+          <div className="mb-8 rounded-lg border bg-card text-card-foreground shadow-sm p-6">
             <div className="space-y-3">
               <div className="flex justify-between border-b pb-2">
                 <span>Monthly Link Building (8-10 links)</span>
@@ -788,7 +778,7 @@ export default function LinkBuildingCostPage() {
                 <span className="font-bold text-primary">$4,300</span>
               </div>
             </div>
-          </Card>
+          </div>
 
           <div className="bg-primary text-primary-foreground p-8 rounded-lg text-center">
             <h3 className="text-2xl font-bold mb-4">
@@ -799,9 +789,9 @@ export default function LinkBuildingCostPage() {
               goals. Our transparent pricing ensures you know exactly what
               you&apos;re paying for.
             </p>
-            <Button size="lg" variant="secondary" asChild>
-              <Link href="/#pricing">Get Your Custom Quote</Link>
-            </Button>
+            <Link href="/#pricing" className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/90">
+              Get Your Custom Quote
+            </Link>
           </div>
         </section>
 
@@ -812,7 +802,7 @@ export default function LinkBuildingCostPage() {
           </h2>
 
           <div className="space-y-6">
-            <Card className="p-6">
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
               <h3 className="font-semibold text-lg mb-3">
                 How much should a small business budget for link building?
               </h3>
@@ -823,9 +813,9 @@ export default function LinkBuildingCostPage() {
                 rankings and traffic. Starting with $500/month is possible but
                 may require 6-12 months to see significant results.
               </p>
-            </Card>
+            </div>
 
-            <Card className="p-6">
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
               <h3 className="font-semibold text-lg mb-3">
                 Why are some backlinks so expensive?
               </h3>
@@ -837,9 +827,9 @@ export default function LinkBuildingCostPage() {
                 from the authority transfer, referral traffic, and brand
                 association with trusted sources.
               </p>
-            </Card>
+            </div>
 
-            <Card className="p-6">
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
               <h3 className="font-semibold text-lg mb-3">
                 Is it cheaper to build links in-house?
               </h3>
@@ -851,9 +841,9 @@ export default function LinkBuildingCostPage() {
                 of diverting attention from core operations makes agencies more
                 cost-effective.
               </p>
-            </Card>
+            </div>
 
-            <Card className="p-6">
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
               <h3 className="font-semibold text-lg mb-3">
                 Can you negotiate link building prices?
               </h3>
@@ -864,9 +854,9 @@ export default function LinkBuildingCostPage() {
                 per-link pricing. Building ongoing relationships with specific
                 websites can also lead to preferential rates over time.
               </p>
-            </Card>
+            </div>
 
-            <Card className="p-6">
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
               <h3 className="font-semibold text-lg mb-3">
                 What&apos;s the minimum effective link building budget?
               </h3>
@@ -877,9 +867,9 @@ export default function LinkBuildingCostPage() {
                 struggle to acquire enough quality links to move the needle on
                 rankings, especially in competitive industries.
               </p>
-            </Card>
+            </div>
 
-            <Card className="p-6">
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
               <h3 className="font-semibold text-lg mb-3">
                 How long until I see ROI from link building?
               </h3>
@@ -891,7 +881,7 @@ export default function LinkBuildingCostPage() {
                 authority builds and competitive keywords begin ranking higher.
                 Patience and consistency are key to link building success.
               </p>
-            </Card>
+            </div>
           </div>
         </section>
 

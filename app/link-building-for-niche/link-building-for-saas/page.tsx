@@ -459,7 +459,7 @@ Best,
                   "Respond to all reviews—positive and negative—professionally",
                   "Update your listings quarterly with new features and case studies",
                   "Claim and verify your profile to get the backlink credit",
-                  "Submit to category-specific lists and "Best Of" articles",
+                  'Submit to category-specific lists and "Best Of" articles',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-[#22C55E] shrink-0 mt-1" />
@@ -963,11 +963,11 @@ Best,
                   },
                   {
                     q: "Should SaaS companies buy backlinks?",
-                    a: "Avoid buying backlinks directly from link vendors as it violates Google's guidelines and risks penalties. Instead, invest in creating linkable assets (free tools, data studies), HARO responses, and genuine partnerships. These "earned" links are safer and typically higher quality."
+                    a: 'Avoid buying backlinks directly from link vendors as it violates Google\'s guidelines and risks penalties. Instead, invest in creating linkable assets (free tools, data studies), HARO responses, and genuine partnerships. These "earned" links are safer and typically higher quality.'
                   },
                   {
                     q: "How do I get backlinks to my SaaS product pages?",
-                    a: "Direct links to product pages are rare and valuable. The best approach is creating comprehensive comparison pages ("Best [Category] Tools") that naturally link to your product, then promoting those pages. Integration partners linking to your product page from their directories is another reliable source."
+                    a: 'Direct links to product pages are rare and valuable. The best approach is creating comprehensive comparison pages ("Best [Category] Tools") that naturally link to your product, then promoting those pages. Integration partners linking to your product page from their directories is another reliable source.'
                   },
                   {
                     q: "What's better for SaaS: guest posting or digital PR?",

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import Nav from "@/app/components/Nav";
-import Footer from "@/app/components/Footer";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "How to Increase Domain Authority Fast: Proven Tactics in 2025",

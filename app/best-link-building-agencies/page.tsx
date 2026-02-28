@@ -863,7 +863,7 @@ export default function BestLinkBuildingAgencies() {
                   <h4 className="font-medium text-[#F0F0F5] group-hover:text-[#4F7CFF] transition-colors mb-1">
                     {article.title}
                   </h4>
-                  <p className="text-sm text-[#8888A0]">{article.description}</p>
+                  <p className="text-sm text-[#8888A0]">{article.desc}</p>
                 </Link>
               ))}
             </div>

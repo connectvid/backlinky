@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Nav from "@/app/sections/Nav";
-import Footer from "@/app/sections/Footer";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "What Are Backlinks? The Complete Beginner's Guide (2025)",

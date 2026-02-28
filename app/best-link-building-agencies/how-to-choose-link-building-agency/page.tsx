@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import Nav from "../../../../components/Nav";
-import Footer from "../../../../components/Footer";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "How to Choose a Link Building Agency: 10 Questions to Ask First",
